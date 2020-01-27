@@ -1,0 +1,56 @@
+<table">
+    <tr >
+        <th>id</th>
+        <th>login</th>
+        <th>email</th>
+        <th>password</th>
+        <th>created</th>
+    </tr>
+    {% for item in users %}
+    <tr id="{{item.id}}">
+        <td>{{ item.id }}</td>
+        <td>{{ item.login }}</td>
+        <td>{{ item.email }}</td>
+        <td>{{ item.password }}</td>
+        <td>{{ item.created }}</td>
+        <td>
+    <button onclick="delete_user('{{item.id}}')">Удалить</button>
+        </td>
+    </tr>
+    {% endfor %}
+    <button onclick="left()">Влево</button> &nbsp;
+    <button onclick="right()">Вправо</button>
+</table>
+
+<p></p>
+<p >Добавить запиcь:</p>
+<form method="POST" name="form">
+    <tr>
+        <b>login:</b >
+        <input id="name" name="username" type="text"><br>
+        <b >email:</b>
+        <input id="mail" name="email" type="text"><br>
+        <b >password:</b>
+        <input id="passd" name="password" type="text"><br>
+    </tr><br>
+    <input type="button" value="Добавить" onclick="add_user()">
+</form>
+
+<p></p>
+<p>Изменить запиcь:</p>
+
+<p>Необходимо ввести все данные</p>
+<p>Повторите те данные, которые не должны изменяться</p>
+<form method="POST" name="form">
+    <tr>
+        <b>id:</b>
+        <input id="id" name="id" type="text" required><br>
+        <b>login:</b>
+        <input id="uname" name="username" type="text" required><br>
+        <b>email:</b>
+        <input id="umail" name="email" type="text" required><br>
+        <b>password:</b>
+        <input id="upassd" name="password" type="text" required><br>
+    </tr><br>
+    <input type="button" value="Изменить" onclick="change_user()">
+</form>

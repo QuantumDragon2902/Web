@@ -1,0 +1,47 @@
+<body>
+    {% block content %}
+    <div>
+        <div>
+            <h3>Введите данные по кредиту:</h3>
+            <hr>
+            <form action="/form" method="POST" style="margin-top: 2rem;">
+                <div>
+                    <label>
+                        <p>Сумма:</p>
+                    </label>
+                    <input type="number" name="sum"
+                        placeholder="Сумма в рублях" required>
+                </div>
+                <div>
+                    <label>
+                        <p>Срок:</p>
+                    </label>
+                    <input type="number" name="time"
+                        placeholder="Срок в днях" required>
+                </div>
+                <button type="reset">Сбросить</button>
+                <hr style="margin-top: 2rem;">
+                <button type="submit">Рассчитать</button>
+            </form>
+        </div>
+
+    </div>
+    <script>
+        (function () {
+            'use strict';
+            window.addEventListener('load', function () {
+                var forms = document.getElementsByClassName('needs-validation');
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
+    {% endblock %}
+</body>

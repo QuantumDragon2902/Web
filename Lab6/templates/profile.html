@@ -1,0 +1,16 @@
+ <div>
+      <div>
+           <div>Профиль</div>
+                <div></div>
+                    {% for list in lists_users %}
+                        <div >
+                            <div>{{list.id}}</div>
+                            <div>{{list.login}}</div>
+                            <div>{{list.email}}</div>
+                            <div>{{list.password}}</div>
+                            <div>{{list.created}}</div>
+                        </div>
+                  {% endfor %}
+            </div>
+      </div>
+</div>
